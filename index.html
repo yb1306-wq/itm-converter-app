@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ממיר ITM למפות גוגל</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>כלי המרת ITM לישראל 🇮🇱</h1>
+        <div id="current-info">
+            <p>תאריך: <span id="date-display"></span> | שעה: <span id="time-display"></span></p>
+            <p id="currentLocationDisplay" class="loading">טוען מיקום ITM...</p>
+        </div>
+    </header>
+
+    <main>
+        <section id="quick-convert" class="card">
+            <h2>פתח מיקום יחיד במפה</h2>
+            <div class="input-group">
+                <label for="itmName">שם הנקודה / תיק:</label>
+                <input type="text" id="itmName" placeholder="נקודת עניין אופציונלית">
+            </div>
+            <div class="input-group">
+                <label for="itmX">קואורדינטה X (ITM):</label>
+                <input type="number" id="itmX" placeholder="דוגמה: 200000">
+            </div>
+            <div class="input-group">
+                <label for="itmY">קואורדינטה Y (ITM):</label>
+                <input type="number" id="itmY" placeholder="דוגמה: 750000">
+            </div>
+            <button class="primary-btn" onclick="openGoogleMaps()">פתח במפת Google</button>
+        </section>
+
+        <section id="multi-points" class="card">
+            <h2>ניהול נקודות ציון וייצוא KML</h2>
+            <div class="input-group">
+                <button class="secondary-btn" onclick="addPoint()">הוסף נקודה לרשימה</button>
+            </div>
+            <ul id="pointsList">
+                </ul>
+            <button class="export-btn" onclick="exportKML()">יצוא קובץ KML</button>
+            <p id="export-msg" class="message"></p>
+        </section>
+    </main>
+
+    <footer>
+        </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
